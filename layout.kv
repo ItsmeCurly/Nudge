@@ -1,0 +1,1170 @@
+#:kivy 1.11.1
+#:import sys sys
+#:import wb webbrowser
+
+<Main_Window>
+    name: "main"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Social Media Platforms"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Facebook"
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0, "top":.85}
+            on_release:
+                root.manager.current = "facebook"
+
+        Button:
+            text: "Twitter"
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0, "top":.7}
+            on_release:
+                root.manager.current = "twitter"
+
+        Button:
+            text: "LinkedIn"
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0, "top":.55}
+            on_release:
+                root.manager.current = "linkedin"
+
+        Button:
+            text: "Instagram"
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0, "top":.40}
+            on_release:
+                root.manager.current = "instagram"
+        Button:
+            text: "Snapchat"
+            size_hint: 0.2, 0.1
+            pos_hint: {"x":0, "top":.25}
+            on_release:
+                root.manager.current = "snapchat"
+
+        Button:
+            text: "Quit"
+            size_hint: .1, .1
+            pos_hint: {"x":.45, "bottom":1}
+            on_release:
+                sys.exit()
+
+<Facebook_Window>
+    name: "facebook"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Facebook, Inc."
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+        Button:
+            text: "View Privacy Policy"
+            size_hint: .2, .1
+            pos_hint: {"x":0, "top":.85}
+            on_release:
+                wb.open("https://tosdr.org/#facebook", new=2)
+
+        Button:
+            text: "Privacy Insights"
+            size_hint: .2, .1
+            pos_hint: {"right":1, "top":.85}
+            on_release:
+                root.manager.current = "facebookpi"
+
+        Label:
+            text: "Data Breaches"
+            size_hint: .2, .1
+            pos_hint: {"left":1, "top":.7}
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Cambridge Analytica: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.55}
+            on_release:
+                wb.open("""https://qz.com/1245049/the-cambridge-analytica-
+                scandal-affected-87-million-people-facebook-says""", new=2)
+
+        Label:
+            text: "~87,000,000 users exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.55}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Cultura Colectiva: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.49}
+            on_release:
+                wb.open("""https://www.upguard.com/breaches/facebook-
+                user-data-leak""", new=2)
+
+        Label:
+            text: "~540,000,000 records exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.49}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "White Hat: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.43}
+            on_release:
+                wb.open("""https://www.facebook.com/notes/facebook-security/
+                important-message-from-facebooks-white-hat-program/
+                10151437074840766/""", new=2)
+
+        Label:
+            text: "~6,000,000 records exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.43}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Email Contacts: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.37}
+            on_release:
+                wb.open("""https://www.theverge.com/2019/4/18/18485089/facebook
+                -email-password-contacts-upload-1-5-million-security-
+                cybersecurity""", new=2)
+
+        Label:
+            text: "~1,500,000 users exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.37}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Feature Exploit: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.31}
+            on_release:
+                wb.open("""https://www.theguardian.com/technology/2018/sep/28/fa
+                cebook-50-million-user-accounts-security-berach""", new=2)
+
+        Label:
+            text: "~50,000,000 users exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.31}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+<FacebookPI_Window>
+    name: "facebookpi"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Facebook, Inc: Privacy Insights"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "facebook"
+
+        Button:
+            text: "Home"
+            size_hint: .1, .1
+            pos_hint: {"right":1, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+
+        Label:
+            text: "Facebook Allows You To: "
+            size_hint: .3, .05
+            pos_hint: {"x":.02, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Modify who can see your posts
+                * Recover account through multiple methods
+                * Use 2-factor authenticatoin
+                * Receive nudges about unrecognized logins
+                * Manage how your profile is found from searches"""
+
+            size_hint: .4, None
+            pos_hint: {"x":.02, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text: "Facebook Privacy Concerns: "
+            size_hint: .3, .05
+            pos_hint: {"x":.58, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Most privacy concerns are opt-out (face-recognition)
+                * Cannot change visibility of all posts at once
+                * Identity is used in ads that are shown to others
+                * Enables tracking on other websites
+                * Deleted content is not deleted
+                * Uses location data and history
+                * Uses browser fingerprinting and cookies
+                * Many breaches shows it is hard to protect"""
+
+            size_hint: .4, None
+            pos_hint: {"x":.58, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+<LinkedIn_Window>
+    name: "linkedin"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "LinkedIn Corp."
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+        Button:
+            text: "View Privacy Policy"
+            size_hint: .2, .1
+            pos_hint: {"x":0, "top":.85}
+            on_release:
+                wb.open("https://tosdr.org/#linkedin", new=2)
+
+        Button:
+            text: "Privacy Insights"
+            size_hint: .2, .1
+            pos_hint: {"right":1, "top":.85}
+            on_release:
+                root.manager.current = "linkedinpi"
+
+        Label:
+            text: "Data Breaches"
+            size_hint: .2, .1
+            pos_hint: {"left":1, "top":.7}
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Password Hashing: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.55}
+            on_release:
+                wb.open("""https://arstechnica.com/information-technology/2012/0
+                6/8-million-leaked-passwords-connected-to-linkedin/""", new=2)
+
+        Label:
+            text: "~6,000,000 users exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.55}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+<LinkedInPI_Window>
+    name: "linkedinpi"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "LinkedIn Corp: Privacy Insights"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "linkedin"
+
+        Button:
+            text: "Home"
+            size_hint: .1, .1
+            pos_hint: {"right":1, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+
+        Label:
+            text: "LinkedIn Allows You To: "
+            size_hint: .3, .05
+            pos_hint: {"x":.02, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Change profile visibility to non-members
+                * Change who can see your: email, connections, last name
+                * Change your status
+                * Get a copy of your data
+                * Manage/rectify your data
+                * Manage who can discover your profile through email
+                * Change demographic data (or not save any)
+                * 2-factor authentication"""
+
+            size_hint: .4, None
+            pos_hint: {"x":.02, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text: "LinkedIn Privacy Concerns: "
+            size_hint: .3, .05
+            pos_hint: {"x":.58, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Ignores Do Not Track headers
+                * Uses your data for services
+                * Uses personal information in many ways
+                * Cannot handle data collection in meaningful ways
+                * Hold onto information after account deletion
+                * Collects information for targeted advertising"""
+
+            size_hint: .4, None
+            pos_hint: {"x":.58, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+
+<Twitter_Window>
+    name: "twitter"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Twitter"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+
+        Button:
+            text: "View Privacy Policy"
+            size_hint: .2, .1
+            pos_hint: {"x":0, "top":.85}
+            on_release:
+                wb.open("https://tosdr.org/#twitter", new=2)
+
+        Button:
+            text: "Privacy Insights"
+            size_hint: .2, .1
+            pos_hint: {"right":1, "top":.85}
+            on_release:
+                root.manager.current = "twitterpi"
+
+        Label:
+            text: "Data Breaches"
+            size_hint: .2, .1
+            pos_hint: {"left":1, "top":.7}
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Malware: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.55}
+            on_release:
+                wb.open("""https://www.bankinfosecurity.com/33-million-twitter-c
+                redentials-may-have-been-leaked-a-9187""", new=2)
+
+        Label:
+            text: "~32,800,000 credentials exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.55}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        Button:
+            text: "Hacking Incident: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.49}
+            on_release:
+                wb.open("""https://web.archive.org/web/20130204085709/https://ww
+                w.wired.co.uk/news/archive/2013-02/02/twitter-hacked""", new=2)
+
+        Label:
+            text: "~250,000 credentials exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.49}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+<TwitterPI_Window>
+    name: "twitterpi"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Twitter: Privacy Insights"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "twitter"
+
+        Button:
+            text: "Home"
+            size_hint: .1, .1
+            pos_hint: {"right":1, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+
+        Label:
+            text: "Twitter Allows You To: "
+            size_hint: .3, .05
+            pos_hint: {"x":.02, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Modify if people can find you through email or phone
+                * Enable location information to tweets (opt-in)
+                * Modify data on your profile
+                * Download your Twitter data
+                * View data accumulated from third-parties
+                * Request and view advertising preferences data
+                * Most privacy concerning features are opt-in"""
+
+            size_hint: .4, None
+            pos_hint: {"x":.02, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text: "Twitter Privacy Concerns: "
+            size_hint: .3, .05
+            pos_hint: {"x":.58, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Ignores Do Not Track browser option for web beacons, etc.
+                * Can delete your account for no reason
+                * Can disclose your personal info. without notifing you
+                * Data is sold to third-parties for advertising\
+                * Large infrastructure has been proved hard to protect"""
+
+            size_hint: .4, None
+            pos_hint: {"x":.58, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+<Instagram_Window>
+    name: "instagram"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Instagram"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+        Button:
+            text: "View Privacy Policy"
+            size_hint: .2, .1
+            pos_hint: {"x":0, "top":.85}
+            on_release:
+                wb.open("https://tosdr.org/#instagram", new=2)
+
+        Button:
+            text: "Privacy Insights"
+            size_hint: .2, .1
+            pos_hint: {"right":1, "top":.85}
+            on_release:
+                root.manager.current = "instagrampi"
+
+        Label:
+            text: "Data Breaches"
+            size_hint: .2, .1
+            pos_hint: {"left":1, "top":.7}
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Unprotected Cloud Servers: "
+            size_hint: .25, .05
+            pos_hint: {"left":1, "top":.55}
+            on_release:
+                wb.open("""https://www.cpomagazine.com/cyber-security/instagram-
+                breach-exposes-personal-data-of-49-million-users/""", new=2)
+
+        Label:
+            text: "~49,000,000 users exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.26, "top":.55}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+<InstagramPI_Window>
+    name: "instagrampi"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Instagram: Privacy Insights"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "instagram"
+
+        Button:
+            text: "Home"
+            size_hint: .1, .1
+            pos_hint: {"right":1, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+
+        Label:
+            text: "Instagram Allows You To: "
+            size_hint: .3, .05
+            pos_hint: {"x":.02, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Turn your account to private mode
+                * View account info and inferred advertising
+                * Change account to have 2-factor authentication
+                * Request data download of profile
+                """
+
+            size_hint: .4, None
+            pos_hint: {"x":.02, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text: "Instagram Privacy Concerns: "
+            size_hint: .3, .05
+            pos_hint: {"x":.58, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Data is shared with many third-parties
+                * Lots of data is collected of usage
+                * Location data is collected and cannot be viewed/deleted
+                * Data cannot be erased
+                * Account can be found from search engine
+                """
+
+            size_hint: .4, None
+            pos_hint: {"x":.58, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+<Snapchat_Window>
+    name: "snapchat"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Snapchat"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+        Button:
+            text: "View Privacy Policy"
+            size_hint: .2, .1
+            pos_hint: {"x":0, "top":.85}
+            on_release:
+                wb.open("https://tosdr.org/#snapchat", new=2)
+
+        Button:
+            text: "Privacy Insights"
+            size_hint: .2, .1
+            pos_hint: {"right":1, "top":.85}
+            on_release:
+                root.manager.current = "snapchatpi"
+
+        Label:
+            text: "Data Breaches"
+            size_hint: .2, .1
+            pos_hint: {"left":1, "top":.7}
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Security Exploit: "
+            size_hint: .2, .05
+            pos_hint: {"left":1, "top":.55}
+            on_release:
+                wb.open("""https://www.washingtonpost.com/news/the-switch/wp/201
+                4/01/01/a-snapchat-security-breach-affects-4-6-million-users-did
+                -snapchat-drag-its-feet-on-a-fix/""", new=2)
+
+        Label:
+            text: "~4,600,000 accounts exposed"
+            size_hint: .3, .05
+            pos_hint: {"x":.21, "top":.55}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+<SnapchatPI_Window>
+    name: "snapchatpi"
+
+    FloatLayout:
+        cols: 1
+
+        canvas.before:
+            Color:
+                rgba: .99,.99,.99,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Snapchat: Privacy Insights"
+            size_hint: .25, .1
+            pos_hint: {"x": .375, "top":1}
+            font_size: 32
+            color: 0,0,0,1
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            text: "Back"
+            size_hint: .1, .1
+            pos_hint: {"x":0, "bottom":1}
+            on_release:
+                root.manager.current = "snapchat"
+
+        Button:
+            text: "Home"
+            size_hint: .1, .1
+            pos_hint: {"right":1, "bottom":1}
+            on_release:
+                root.manager.current = "main"
+
+        Label:
+            text: "Snapchat Allows You To: "
+            size_hint: .3, .05
+            pos_hint: {"x":.02, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Modify who can call/message you
+                * Modify who can see your posts
+                * Modify who can see your location
+                * Modify who can add you
+                * Delete your account and information on it
+                * Change app permissions through the settings"""
+
+            size_hint: .4, None
+            pos_hint: {"x":.02, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text: "Snapchat Privacy Concerns: "
+            size_hint: .3, .05
+            pos_hint: {"x":.58, "top":.9}
+            color: 0,0,0,1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Label:
+            text:
+                """* Snapchat will not delete information all the time
+                * Employees can view snaps
+                * Snap map shows location data to other people
+                * Snapchat shares your name with other people
+                * Information is shared with third-parties"""
+
+            size_hint: .4, None
+            pos_hint: {"x":.58, "top":.85}
+            color: 0,0,0,1
+            text_size: self.width, None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'middle'
+            canvas.before:
+                Color:
+                    rgba: .99,.99,.99,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
