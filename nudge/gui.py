@@ -12,7 +12,7 @@ class PrivacyApp(App):
         self.title = "Your Privacy on Social Platforms"
         return sm
 
-Builder.load_file("layout.kv")
+Builder.load_file("nudge\\layout.kv")
 
 
 class Main_Window(Screen):
@@ -74,5 +74,5 @@ for screen in screens:
 
 sm.current = "main"
 
-if __name__ == '__main__':
+def main():
     PrivacyApp().run()
